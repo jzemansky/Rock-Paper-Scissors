@@ -1,20 +1,28 @@
+const prompt = require("prompt-sync")();
+
 function getComputerChoice() {
     let x = Math.floor(Math.random() * 3);
-    let choice = '';
+    let computerChoice = '';
 
-    console.log(x);
     switch(x) {
         case 0:
-            choice = 'Rock';
+            computerChoice = 'rock';
             break;
         case 1:
-            choice = 'Paper';
+            computerChoice = 'paper';
             break;
         case 2:
-            choice = 'Scissors';
+            computerChoice = 'scissors';
             break;
     }
-    return choice;
+    return computerChoice;
 }
 
+function getPlayerChoice() {
+    let playerChoice = prompt("Rock, paper, or scissors? ");
+    playerChoice = playerChoice.toLowerCase();
+    return playerChoice;
+}
+
+console.log(getPlayerChoice());
 console.log(getComputerChoice());
